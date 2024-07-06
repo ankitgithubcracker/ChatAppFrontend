@@ -12,6 +12,7 @@ import SearchUser from './SearchUser';
 import { FaImage } from "react-icons/fa6";
 import { FaVideo } from "react-icons/fa6";
 import { logout } from '../redux/userSlice';
+import toast from 'react-hot-toast';
 
 const Sidebar = () => {
     const user = useSelector(state => state?.user)
@@ -58,6 +59,7 @@ const Sidebar = () => {
         dispatch(logout())
         localStorage.clear()
         navigate("/email")
+        toast.success("Logout Succesfully")
     }
 
   return (
